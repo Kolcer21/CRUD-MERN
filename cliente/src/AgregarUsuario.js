@@ -31,7 +31,7 @@ function AgregarUsuario()
                         <input type='text' className='form-control' id='nombre' placeholder='Ingrese su telefono'/>
                      </div>
 
-                        <button type='submit' onClick={agregarUsuario} className='btn btn-succes'>Guardar</button>
+                        <button type='submit' onClick={agregarUsuario} className='btn btn-success'>Guardar</button>
 
                 </div>
             </div>
