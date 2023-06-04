@@ -1,9 +1,10 @@
 import React, {useState, useEffect}  from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function EditarUsuario()
 {
+    const navegar = useNavigate();
 
     const params = useParams();
 
@@ -22,7 +23,23 @@ function EditarUsuario()
     }, [params]);
 
     function editarUsuario(){
+        //Nuevo objeto usuario
+        const actualizarUsuario = {
+            nombre: nombre,
+            email: email,
+            telefono: telefono,
+            idusuario: params.idusuario
+    }
 
+    axios.post('/api/usuario/actualizarusuario', actualizarUsuario)
+    .then(function(res) {
+        alert(res.data);
+        navegar(0);
+        console.log(res);
+    })
+    .catch(function(err) {
+        console.log(err);
+    })
     }
 
     return (

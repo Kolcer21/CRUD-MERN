@@ -42,7 +42,7 @@ router.post('/agregarusuario', function(req, res) {
     });
 usuario.save()
 .then(result => {
-    res.send('usuario agregado correctamente');
+    res.send('Usuario agregado correctamente');
 })
 .catch(error => {
     res.send(error);
@@ -58,3 +58,28 @@ router.post('/obtenerdata', function(req, res) {
     .catch(function(error) {
     });
 });
+
+//Actualizar usuario
+router.post('/actualizarusuario', function(req, res) {
+    modelUsuario.updateOne({idusuario: req.body.idusuario}, {
+        nombre: req.body.nombre,
+        email: req.body.email,
+        telefono: req.body.telefono
+    })
+    .then(function(usuarios) {
+        res.send('Usuario actualizado correctamente');
+    })
+    .catch(function(error) {
+    });
+});
+
+//Borrar usuario
+router.post('/borrarusuario', function(req, res) {
+    modelUsuario.deleteOne({ idusuario: req.body.idusuario })
+      .then(() => {
+        res.send('Usuario eliminado correctamente');
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  });
