@@ -2,7 +2,7 @@ import './App.css';
 import ListaUsuarios from './ListaUsuarios';
 import AgregarUsuario from './AgregarUsuario';
 import EditarUsuario from './EditarUsuario';
-import {BrowserRouter, Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
 
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container">
-    <a className="navbar-brand" href="#">CRUD MERN Stack</a>
+    <a className="navbar-brand" href="/">CRUD MERN Stack</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ListaUsuarios/>} exact/>
           <Route path="/agregarusuario" element={<AgregarUsuario/>}exact/> 
-          <Route path="/editarusuario" element={<EditarUsuario/>}exact/>
+          <Route path="/editarusuario/:idusuario" element={<EditarUsuario/>}exact/>
         </Routes>
       </BrowserRouter>
 

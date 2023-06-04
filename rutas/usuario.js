@@ -48,3 +48,13 @@ usuario.save()
     res.send(error);
 });
 })
+
+//Obtener data de un usuario
+router.post('/obtenerdata', function(req, res) {
+    modelUsuario.find({idusuario: req.body.idusuario})
+    .then(function(usuarios) {
+        res.send(usuarios);
+    })
+    .catch(function(error) {
+    });
+});

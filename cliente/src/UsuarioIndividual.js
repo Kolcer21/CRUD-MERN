@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function UsuarioIndividual({usuario})
 {
@@ -12,10 +13,13 @@ function UsuarioIndividual({usuario})
                         <li className='list-group-item'>{usuario.email}</li>
                         <li className='list-group-item'>{usuario.telefono}</li>
                     </ul>
+
+                    
+
                     <hr></hr>
-                    <button className='btn btn-primary'>Editar</button>
+                    <Link to={`/editarusuario/${usuario.idusuario}`}><button className='btn btn-primary'>Editar</button></Link>
                     &nbsp;
-                    <button className='btn btn-danger'>Eliminar</button>
+                    <Link to={`/eliminarusuario`}><button className='btn btn-danger'>Eliminar</button></Link>
                     <hr className='mt-4'></hr>
                 </div>
             </div>
