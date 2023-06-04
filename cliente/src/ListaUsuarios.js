@@ -22,8 +22,9 @@ function ListaUsuarios()
     })
 
     return (
-        <div>
+        <div className='container'>
             <h2>Lista de usuarios</h2>
+            <br></br>
             {listausuarios}
         </div>
     );

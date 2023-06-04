@@ -22,6 +22,7 @@ function AgregarUsuario()
         console.log(usuario);
         axios.post('/api/usuario/agregarusuario', usuario)
         .then(function(res) {
+            alert(res.data);
             console.log(res);
         })
         .catch(function(err) {  
